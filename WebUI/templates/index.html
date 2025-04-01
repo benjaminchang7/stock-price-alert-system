@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stock Price Alert Notification System</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Stock Price Alert Notification System</h1>
+    <p class="disclaimer">
+      DISCLAIMER: This is for homework demonstration of microservices only – therefore the User ID, Alert ID, etc. are entered manually and the dashboard is accessible to all users.
+    </p>
+  </header>
+  
+  <main>
+    <section class="portfolio">
+      <h2>Portfolio Management</h2>
+      <form id="portfolio-form">
+        <input type="hidden" id="portfolio_id">
+        <div class="form-group">
+          <label for="user_id">User ID:</label>
+          <input type="text" id="user_id" required>
+        </div>
+        <div class="form-group">
+          <label for="stock_symbol">Stock Symbol:</label>
+          <input type="text" id="stock_symbol" required>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" required>
+        </div>
+        <button type="submit">Add / Update Portfolio</button>
+      </form>
+      <h3>Portfolio</h3>
+      <table id="portfolio-table">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Stock Symbol</th>
+            <th>Quantity</th>
+            <th>Current Price</th> <!-- New column added -->
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Portfolio items display -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="alert-conditions">
+      <h2>Alert Conditions</h2>
+      <form id="alert-form">
+        <div class="form-group">
+          <label for="alert_id">Alert ID:</label>
+          <input type="text" id="alert_id" required>
+        </div>
+        <div class="form-group">
+          <label for="alert_stock_symbol">Stock Symbol:</label>
+          <input type="text" id="alert_stock_symbol" required>
+        </div>
+        <div class="form-group">
+          <label for="condition_type">Condition:</label>
+          <select id="condition_type">
+            <option value="above">Above</option>
+            <option value="below">Below</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="threshold">Threshold:</label>
+          <input type="number" step="any" id="threshold" required>
+        </div>
+        <button type="submit">Add / Update Alert Condition</button>
+      </form>
+      <h3>Your Alert Conditions</h3>
+      <table id="alert-table">
+        <thead>
+          <tr>
+            <th>Alert ID</th>
+            <th>Stock Symbol</th>
+            <th>Condition</th>
+            <th>Threshold</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Alert conditions -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="alerts">
+      <h2>Triggered Alerts</h2>
+      <div id="alerts-container">
+        <!-- Triggered alerts display -->
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
